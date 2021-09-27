@@ -1,0 +1,15 @@
+:root {
+    background-color: white;
+}
+
+h1 {
+    background-color: darkblue;
+    color:white;
+    text-align: center;
+    padding:10px
+}
+
+.full-size {
+    width: 100%;
+}
+
