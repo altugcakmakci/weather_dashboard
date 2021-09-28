@@ -23,6 +23,14 @@ body {
     font-size: 24px;
 }
 
+.button-checked {
+    opacity: 1;
+}
+
+.button-unchecked {
+    opacity: 0.5;
+}
+
 .uv_low {
     background-color: green;
     color:white;
