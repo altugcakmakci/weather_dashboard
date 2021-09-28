@@ -1,16 +1,22 @@
-:root {
-    background-color: white;
-}
-
 h1 {
     background-color: darkblue;
     color:white;
     text-align: center;
-    padding:10px
+    padding:10px;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+body {
+    font-family: 'Barlow Semi Condensed', sans-serif;
 }
 
 .full-size {
     width: 100%;
+    font-size: 16px;
+}
+
+.capitalize {
+    text-transform: capitalize;
 }
 
 .uv_low {
@@ -39,4 +45,8 @@ h1 {
     color:white;
     width: 50 px;
     border: solid 1px white;
+}
+
+.daily_card {
+    font-size: 14px;
 }
