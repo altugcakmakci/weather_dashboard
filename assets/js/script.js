@@ -28,21 +28,25 @@ function generateCurrentTab() {
     let newp1El = document.createElement("p");
     newp1El.setAttribute('id', 'temp');
     newp1El.classList.add("text-white");
+    newp1El.classList.add("body_text");
     newdivEl.appendChild(newp1El);
 
     let newp2El = document.createElement("p");
     newp2El.setAttribute('id', 'wind');
     newp2El.classList.add("text-white");
+    newp2El.classList.add("body_text");
     newdivEl.appendChild(newp2El);
 
     let newp3El = document.createElement("p");
     newp3El.setAttribute('id', 'humidity');
     newp3El.classList.add("text-white");
+    newp3El.classList.add("body_text");
     newdivEl.appendChild(newp3El);
 
     let newp4El = document.createElement("p");
     newp4El.setAttribute('id', 'uv-index');
     newp4El.classList.add("text-white");
+    newp4El.classList.add("body_text");
     newdivEl.appendChild(newp4El);
 
     currentTabEl.appendChild(newdivEl);
@@ -51,7 +55,7 @@ function generateCurrentTab() {
 function addCityListElement(cityName) {
     let cityList = document.getElementById("city-list");
     let newCityEl = document.createElement("li");
-    newCityEl.className = "list-group-item list-group-item-primary m-1";
+    newCityEl.className = "list-group-item list-group-item-primary m-1 city-list-item";
 
 
     newCityEl.textContent = cityName;

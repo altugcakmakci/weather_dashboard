@@ -19,6 +19,10 @@ body {
     text-transform: capitalize;
 }
 
+.body_text {
+    font-size: 24px;
+}
+
 .uv_low {
     background-color: green;
     color:white;
@@ -49,4 +53,19 @@ body {
 
 .daily_card {
     font-size: 14px;
+}
+
+.city-list-item {  
+    border: solid 1px white; 
+    clip-path: polygon( 
+      calc(0% + 5px) calc(0% + 5px), /* top left */
+      calc(100% - 5px) calc(0% + 5px), /* top right */
+      calc(100% - 5px) calc(100% - 5px), /* bottom right */
+      calc(0% + 5px) calc(100% - 5px) /* bottom left */
+    );
+    transition: clip-path 0.3s linear;
+  }
+
+.city-list-item:hover {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
