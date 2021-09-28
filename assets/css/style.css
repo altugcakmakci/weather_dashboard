@@ -13,3 +13,30 @@ h1 {
     width: 100%;
 }
 
+.uv_low {
+    background-color: green;
+    color:white;
+    width: 50 px;
+    border: solid 1px white;
+}
+
+.uv_mod {
+    background-color: yellow;
+    color:black;
+    width: 50 px;
+    border: solid 1px white;
+}
+
+.uv_high {
+    background-color: orange;
+    color:black;
+    width: 50 px;
+    border: solid 1px white;
+}
+
+.uv_very_high {
+    background-color: red;
+    color:white;
+    width: 50 px;
+    border: solid 1px white;
+}
