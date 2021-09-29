@@ -95,7 +95,7 @@ function addNewCity(cityName) {
 
 function getCityWeather(cityName) {
 
-    let apiUrl = 'http://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&units=' + unitType + '&APPID=26d75bfcf641ce6a0281c23a223200c6';
+    let apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&units=' + unitType + '&APPID=26d75bfcf641ce6a0281c23a223200c6';
     fetch(apiUrl).then(function (response) {
         if (response.ok) {
             response.json().then(function (data) {
@@ -103,7 +103,7 @@ function getCityWeather(cityName) {
                 let cityTitleEl = document.getElementById("city-title");
                 cityTitleEl.textContent = cityName + ", " + data.sys.country + " (" + moment().format("MMM Do, YYYY") + ")";
                 let curImgEl = document.createElement("img");
-                curImgEl.setAttribute("src", "http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png");
+                curImgEl.setAttribute("src", "https://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png");
                 cityTitleEl.appendChild(curImgEl);
 
                 let tempEl = document.getElementById("temp");
@@ -160,7 +160,7 @@ function populateCityList() {
 }
 
 function getDailyWeather(cityLat, cityLon) {
-    let apiUrl = 'http://api.openweathermap.org/data/2.5/onecall?lat=' + cityLat + '&lon=' + cityLon + '&units=' + unitType + '&APPID=26d75bfcf641ce6a0281c23a223200c6';
+    let apiUrl = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + cityLat + '&lon=' + cityLon + '&units=' + unitType + '&APPID=26d75bfcf641ce6a0281c23a223200c6';
     let cardsTabEl = document.getElementById("cards-row");
     cardsTabEl.innerHTML = '';
     fetch(apiUrl).then(function (response) {
@@ -174,7 +174,7 @@ function getDailyWeather(cityLat, cityLon) {
                     dateEl.className = "text-nowrap";
                     newCardEl.appendChild(dateEl);
                     let curImgEl = document.createElement("img");
-                    curImgEl.setAttribute("src", "http://openweathermap.org/img/wn/" + data.daily[i].weather[0].icon + "@2x.png");
+                    curImgEl.setAttribute("src", "https://openweathermap.org/img/wn/" + data.daily[i].weather[0].icon + "@2x.png");
                     newCardEl.appendChild(curImgEl);
                     let tempEl = document.createElement("p");
                     tempEl.textContent = "Temp: " + data.daily[i].temp.max + " °" + unitName;
