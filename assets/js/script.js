@@ -95,7 +95,7 @@ function addNewCity(cityName) {
 
 function getCityWeather(cityName) {
 
-    let apiUrl = 'http://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&units='+unitType+'&APPID=26d75bfcf641ce6a0281c23a223200c6';
+    let apiUrl = 'http://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&units=' + unitType + '&APPID=26d75bfcf641ce6a0281c23a223200c6';
     fetch(apiUrl).then(function (response) {
         if (response.ok) {
             response.json().then(function (data) {
@@ -107,13 +107,13 @@ function getCityWeather(cityName) {
                 cityTitleEl.appendChild(curImgEl);
 
                 let tempEl = document.getElementById("temp");
-                tempEl.textContent = "Temp: " + data.main.temp + " °"+unitName;
+                tempEl.textContent = "Temp: " + data.main.temp + " °" + unitName;
                 let windEl = document.getElementById("wind");
-                windEl.textContent = "Wind: " + data.wind.speed + " "+speedUnit;
+                windEl.textContent = "Wind: " + data.wind.speed + " " + speedUnit;
                 let humidityEl = document.getElementById("humidity");
                 humidityEl.textContent = "Humidity: " + data.main.humidity + "%";
 
-                let uviUrl = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + data.coord.lat + '&lon=' + data.coord.lon + '&units='+unitType+'&APPID=26d75bfcf641ce6a0281c23a223200c6';
+                let uviUrl = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + data.coord.lat + '&lon=' + data.coord.lon + '&units=' + unitType + '&APPID=26d75bfcf641ce6a0281c23a223200c6';
                 fetch(uviUrl).then(function (resp) {
                     if (response.ok) {
                         resp.json().then(function (uvdata) {
@@ -160,7 +160,7 @@ function populateCityList() {
 }
 
 function getDailyWeather(cityLat, cityLon) {
-    let apiUrl = 'http://api.openweathermap.org/data/2.5/onecall?lat=' + cityLat + '&lon=' + cityLon + '&units='+unitType+'&APPID=26d75bfcf641ce6a0281c23a223200c6';
+    let apiUrl = 'http://api.openweathermap.org/data/2.5/onecall?lat=' + cityLat + '&lon=' + cityLon + '&units=' + unitType + '&APPID=26d75bfcf641ce6a0281c23a223200c6';
     let cardsTabEl = document.getElementById("cards-row");
     cardsTabEl.innerHTML = '';
     fetch(apiUrl).then(function (response) {
@@ -170,18 +170,18 @@ function getDailyWeather(cityLat, cityLon) {
                     let newCardEl = document.createElement('div');
                     newCardEl.className = "col-12 col-md-2 col-l-2 p-2 m-2 bg-primary text-white w-20 daily_card";
                     let dateEl = document.createElement("p");
-                    dateEl.textContent = moment().add(i, 'days').format("MMM Do");
+                    dateEl.textContent = moment().add(i+1, 'days').format("MMM Do");
                     dateEl.className = "text-nowrap";
                     newCardEl.appendChild(dateEl);
                     let curImgEl = document.createElement("img");
                     curImgEl.setAttribute("src", "http://openweathermap.org/img/wn/" + data.daily[i].weather[0].icon + "@2x.png");
                     newCardEl.appendChild(curImgEl);
                     let tempEl = document.createElement("p");
-                    tempEl.textContent = "Temp: " + data.daily[i].temp.max + " °"+unitName;
+                    tempEl.textContent = "Temp: " + data.daily[i].temp.max + " °" + unitName;
                     tempEl.className = "text-nowrap";
                     newCardEl.appendChild(tempEl);
                     let windEl = document.createElement("p");
-                    windEl.textContent = "Wind: " + data.daily[i].wind_speed + " "+speedUnit;
+                    windEl.textContent = "Wind: " + data.daily[i].wind_speed + " " + speedUnit;
                     windEl.className = "text-nowrap";
                     newCardEl.appendChild(windEl);
                     let humidityEl = document.createElement("p");
@@ -205,7 +205,7 @@ function resetCityList() {
 cityButton.addEventListener("click", populateCity);
 resetButton.addEventListener("click", resetCityList);
 
-celButton.addEventListener("click",function(event){
+celButton.addEventListener("click", function (event) {
     event.preventDefault();
     unitType = "metric";
     unitName = "C";
@@ -214,7 +214,7 @@ celButton.addEventListener("click",function(event){
     fahButton.classList = "btn btn-primary button-unchecked";
 });
 
-fahButton.addEventListener("click",function(event){
+fahButton.addEventListener("click", function (event) {
     event.preventDefault();
     unitType = "imperial";
     unitName = "F";
